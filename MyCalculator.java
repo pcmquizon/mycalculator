@@ -60,7 +60,7 @@ public class MyCalculator {
 				return middle;
 			}
 		}
-		return -1;		//number not found in given array
+		return -1;		//number not found in given array or array is empty
 	}
 	
 }
