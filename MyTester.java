@@ -211,4 +211,19 @@ public class MyTester {
 		//fail("Not yet implemented");
 	}
 	/**end tests where values are not in the given array**/
+	
+	//searches for value in an empty tree
+	public void testBinarySearchEmpty() {
+		MyCalculator calc = new MyCalculator();
+		int[] arr = {};
+		int actual = calc.binarySearch(arr,20);
+		assertEquals("20 is not found (-1)", -1, actual);
+		
+		actual = calc.binarySearch(arr,0);
+		assertEquals("0 is not found (-1)", -1, actual);
+		
+		actual = calc.binarySearch(arr,-5);
+		assertEquals("-5 is not found (-1)", -1, actual);
+		//fail("Not yet implemented");
+	}
 }
