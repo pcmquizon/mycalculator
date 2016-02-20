@@ -48,23 +48,19 @@ public class MyCalculator {
 	
 	// binary search in an array
 	int binarySearch(int[] a,int x){
-		boolean found = false;	//check if found or not
 		int n = a.length; // get number of elements in the array
 		int lower, upper, middle; // variables for positions in the array
 		lower = 0; upper = n-1; // initialize values of lower and upper points
 		
-		while(lower<=upper && !found){
+		while(lower<=upper){
 			middle = (lower+upper)/2;
 			if(x>a[middle]) lower = middle + 1;
 			else if(x<a[middle]) upper = middle - 1;
 			else{
-				found = true;
 				return middle;
 			}
 		}
-		
-		if(found) return 1;
-		else return -1;		//number not found in given array
+		return -1;		//number not found in given array
 	}
 	
 }
