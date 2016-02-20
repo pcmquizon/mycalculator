@@ -36,9 +36,11 @@ public class MyCalculator {
 	
 	// n! of an integer
 	public int nfactorial(int n){
+		if(n<0) return 0;	//return 0 for all negative integers
+		
 		int factorial = 1;
 		
-		for(int i=1;i<n;i++)
+		for(int i=1;i<=n;i++)
 			factorial *= i;
 		
 		return factorial;
@@ -46,18 +48,23 @@ public class MyCalculator {
 	
 	// binary search in an array
 	int binarySearch(int[] a,int x){
+		boolean found = false;	//check if found or not
 		int n = a.length; // get number of elements in the array
 		int lower, upper, middle; // variables for positions in the array
 		lower = 0; upper = n-1; // initialize values of lower and upper points
 		
-		while(lower<=upper){
+		while(lower<=upper && !found){
 			middle = (lower+upper)/2;
 			if(x>a[middle]) lower = middle + 1;
 			else if(x<a[middle]) upper = middle - 1;
-			else return middle;
+			else{
+				found = true;
+				return middle;
+			}
 		}
 		
-		return 1;
+		if(found) return 1;
+		else return -1;		//number not found in given array
 	}
 	
 }
